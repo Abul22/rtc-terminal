@@ -1,2 +1,2 @@
-# rtc-terminal
-A cli client webrtc ssh terminal
+### rtc-terminal
+
