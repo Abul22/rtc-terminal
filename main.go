@@ -79,7 +79,7 @@ func main() {
 			check(err)
 		}
 		if os.IsNotExist(err) && *uuidKey == "" {
-			log.Println("File config.ini not found, using option -uuid=<xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx>")
+			log.Println("File config.ini not found, using option -uuid= <UUID key remote device>")
 			os.Exit(0)
 		} 
 		defer file.Close()	
@@ -94,7 +94,7 @@ func main() {
 	} 
 		
 	loadConf()
-		
+			
 	if *getkey { 
 		fmt.Println("uuid:", conf.Uuid)
 	}
@@ -109,7 +109,10 @@ func main() {
 		saveConf()
 	}
 	
-	
+	if conf.Uuid == "" && *uuidKey == ""{
+		log.Println("UUID not set, using option -uuid = <UUID key remote device>")
+		os.Exit(0)
+	} 
 	
 	done := make(chan struct{})
 	closeSig := make(chan struct{})

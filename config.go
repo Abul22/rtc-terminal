@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pion/webrtc"
+	"github.com/pion/webrtc/v2"
 )
 	
 
