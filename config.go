@@ -4,7 +4,6 @@ import (
 	"github.com/pion/webrtc/v2"
 )
 	
-
 var (
 	configRTC = webrtc.Configuration{
 		ICEServers: []webrtc.ICEServer{

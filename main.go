@@ -15,7 +15,6 @@ import (
     ini "github.com/pierrec/go-ini"
 )
 
-
 type Config struct {
 	Uuid     string  `ini:"uuid,identify"`
 }
@@ -51,9 +50,6 @@ func connect(closeSig <-chan struct{}, query string) *websocket.Conn {
 	}()
 	return ws
 }
-
-
-
 
 func main() {
 	log.SetFlags(0)
@@ -159,9 +155,6 @@ func main() {
 	}()
 	Terminal(port)
 }
-
-
-
 
 func check(e error) {
     if e != nil {

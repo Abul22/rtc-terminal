@@ -14,7 +14,6 @@ import (
 )
 
 func Terminal(port int) {
-
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("login as: ")
 	username, _ := reader.ReadString('\n')
@@ -24,6 +23,7 @@ func Terminal(port int) {
 	if err != nil {
 		log.Println(err)
 	}
+	
 	password := strings.TrimSpace(string(bytePassword))
 	auth := []ssh.AuthMethod{ssh.Password(password)}
 	config := &ssh.ClientConfig{
@@ -33,7 +33,6 @@ func Terminal(port int) {
 		Timeout: 30 * time.Second,
 	}
 	client, err := ssh.Dial("tcp", fmt.Sprintf("127.0.0.1:%d", port), config)
-	
 	
 	if err != nil {
 		fmt.Println(err) 
@@ -76,13 +75,9 @@ func Terminal(port int) {
 		fmt.Println(err)
 	}
 	
-	
 	go resizeEvent(session, termWidth, termHeight)
 	session.Wait()
-
 }
-
-
 
 func resizeEvent(session *ssh.Session, termWidth, termHeight int){
 	for{

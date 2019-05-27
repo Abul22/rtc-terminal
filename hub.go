@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"net"
 	"io"
-//	"os"
 	"github.com/pion/webrtc/v2"
 	"github.com/gorilla/websocket"
 )
@@ -36,7 +35,6 @@ func hub(ws *websocket.Conn, ssh net.Conn) error {
 	}
 	return nil
 }
-
 
 func startRTC(ws *websocket.Conn, ssh net.Conn, data Session) error {
 	if data.Error != "" {
@@ -93,9 +91,7 @@ func startRTC(ws *websocket.Conn, ssh net.Conn, data Session) error {
 	return nil
 }
 
-
 func DataChannel(dc *webrtc.DataChannel, ssh net.Conn) {
-		
 	dc.OnOpen(func() {
 		fmt.Printf("Status: Open SSH socket\n")
 		io.Copy(&Wrap{dc}, ssh)	
@@ -104,11 +100,9 @@ func DataChannel(dc *webrtc.DataChannel, ssh net.Conn) {
 		if string(msg.Data) != "OPEN_RTC_CHANNEL" {
 			ssh.Write(msg.Data)
 		}
-		//return nil
 	})		
 	dc.OnClose(func() {
 		fmt.Printf("Close SSH socket\n")
 		ssh.Close()
 	})
-	
 }
