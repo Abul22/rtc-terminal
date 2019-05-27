@@ -102,4 +102,3 @@ func resizeEvent(session *ssh.Session, termWidth, termHeight int){
 		}
 	}
 }
-
