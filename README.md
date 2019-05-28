@@ -2,7 +2,7 @@
 
 1. Install rtc-ssh on remote device/server from the repository: https://github.com/mxseba/rtc-ssh
 
-Note the uuid key generated in the rtc-ssh application
+Note the uuid key generated in the rtc-ssh application.
 
 2. Get source rtc-terminal on local computer using the Go compilator:
 ```
