@@ -1,4 +1,4 @@
-# rtc-terminal (CLI)
+## rtc-terminal (CLI)
 
 1. Install rtc-ssh on remote device/server from the repository: https://github.com/mxseba/rtc-ssh
 
