@@ -10,4 +10,5 @@ go get -u github.com/mxseba/rtc-terminal
 cd $GOPATH/bin
 rtc-terminal -uuid=<UUID key remote device>
 ```
-
+### Install from binary
+https://github.com/mxseba/rtc-terminal/releases
