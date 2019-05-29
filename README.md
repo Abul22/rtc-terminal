@@ -10,7 +10,7 @@ go get -u github.com/mxseba/rtc-terminal
 cd $GOPATH/bin
 rtc-terminal -uuid=<UUID key remote device>
 ```
-option -uuid usage only first run, the uuid key will be saved automatically in the config.ini file.
+Option <code>-uuid</code> usage only first run, the uuid key will be saved automatically in the config.ini file.
 
 ### Install from binary
 https://github.com/mxseba/rtc-terminal/releases
